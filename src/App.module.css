@@ -31,6 +31,8 @@
 .form {
   width: 40rem;
   margin: 30px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .products {
@@ -41,7 +43,9 @@
 }
 
 .line {
-  width: 100%;
+  width: 130%;
+  align-self: center;
+  border: .1px solid rgb(214, 209, 209);
 }
 
 .productsList {
