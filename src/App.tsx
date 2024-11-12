@@ -1,29 +1,10 @@
 import styles from "./App.module.css";
 import type { CascaderProps } from "antd";
 import { Cascader } from "antd";
-
-interface Products {
-  value: string;
-  label: string;
-}
-
-const products: Products[] = [
-  {
-    value: "Product 1",
-    label: "Product 1",
-  },
-  {
-    value: "Product 2",
-    label: "Product 2",
-  },
-  {
-    value: "Product 3",
-    label: "Product 3",
-  },
-];
+import { Options, products, locations, options } from './Data/data'
 
 function App() {
-  const onChangeProducts: CascaderProps<Products>["onChange"] = (value) => {
+  const onChangeOptions: CascaderProps<Options>["onChange"] = (value) => {
     console.log(value);
   };
 
@@ -42,7 +23,7 @@ function App() {
           <Cascader
             className={styles.productsList}
             options={products}
-            onChange={onChangeProducts}
+            onChange={onChangeOptions}
           />
         </div>
         <hr className={styles.line} />
@@ -50,14 +31,14 @@ function App() {
           <h3>Location of growing are</h3>
           <Cascader
             className={styles.locationsList}
-            options={products}
-            onChange={onChangeProducts}
+            options={locations}
+            onChange={onChangeOptions}
           />
           <h3>Recipient Location Description*</h3>
           <Cascader
             className={styles.recipientLocations}
-            options={products}
-            onChange={onChangeProducts}
+            options={options}
+            onChange={onChangeOptions}
           />
         </div>
         <hr className={styles.line} />
