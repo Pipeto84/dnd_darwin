@@ -9,7 +9,7 @@
 .container {
   width: 55rem;
   height: 100vh;
-  margin: 20px;
+  margin: 1.25rem;
   display: flex;
   flex-direction: column;
 }
@@ -20,10 +20,32 @@
   color: white;
 }
 
-.header>h2 {
+.titleHeader {
   margin: 25px 50px 0 35px ;
 }
 
-.header>p {
+.infoHeader {
   margin: 5px 50px 25px 35px ;
+}
+
+.form {
+  width: 40rem;
+  margin: 30px auto;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  margin-bottom: 1.25rem;
+}
+
+.line {
+  width: 100%;
+}
+
+.productsList {
+  width: 100%;
+  height: 2.5rem;
+  align-self: center;
 }
