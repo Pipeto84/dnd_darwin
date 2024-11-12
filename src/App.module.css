@@ -3,6 +3,10 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: rgb(218, 218, 218);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -10,14 +14,16 @@
   width: 55rem;
   height: 100vh;
   margin: 1.25rem;
+  background-color: #ffffff;
+  border-radius: 15px 15px 0 0;
   display: flex;
   flex-direction: column;
 }
 
 .header {
   background-color: #ee6002;
-  border-radius: 15px 15px 0 0;
   color: white;
+  border-radius: 15px 15px 0 0;
 }
 
 .titleHeader {
@@ -43,7 +49,7 @@
 }
 
 .line {
-  width: 130%;
+  width: 125%;
   align-self: center;
   border: .1px solid rgb(214, 209, 209);
 }
