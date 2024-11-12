@@ -7,22 +7,22 @@ interface Products {
   label: string;
 }
 
-function App() {
-  const products: Products[] = [
-    {
-      value: "Product 1",
-      label: "Product 1",
-    },
-    {
-      value: "Product 2",
-      label: "Product 2",
-    },
-    {
-      value: "Product 3",
-      label: "Product 3",
-    },
-  ];
+const products: Products[] = [
+  {
+    value: "Product 1",
+    label: "Product 1",
+  },
+  {
+    value: "Product 2",
+    label: "Product 2",
+  },
+  {
+    value: "Product 3",
+    label: "Product 3",
+  },
+];
 
+function App() {
   const onChangeProducts: CascaderProps<Products>["onChange"] = (value) => {
     console.log(value);
   };
@@ -45,7 +45,22 @@ function App() {
             onChange={onChangeProducts}
           />
         </div>
-        <hr className={styles.line}/>
+        <hr className={styles.line} />
+        <div className={styles.location}>
+          <h3>Location of growing are</h3>
+          <Cascader
+            className={styles.locationsList}
+            options={products}
+            onChange={onChangeProducts}
+          />
+          <h3>Recipient Location Description*</h3>
+          <Cascader
+            className={styles.recipientLocations}
+            options={products}
+            onChange={onChangeProducts}
+          />
+        </div>
+        <hr className={styles.line} />
       </div>
     </div>
   );
