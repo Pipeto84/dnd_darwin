@@ -81,3 +81,34 @@ body {
   height: 2.5rem;
   align-self: center;
 }
+
+.selections {
+  margin-top: 1.50rem;
+}
+
+.amountType {
+  margin-top: .6rem;
+}
+
+.amount {
+  width: 8rem;
+  margin-right: 1.6rem;
+}
+
+.measure {
+  width: 10rem;
+}
+
+.dateTime {
+  margin-top: 2rem;
+  display: flex;
+
+}
+
+.date {
+  margin-right: 7rem;
+}
+
+.dateSelect {
+  margin-top: .6rem;
+}

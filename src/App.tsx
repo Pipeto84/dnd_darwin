@@ -21,7 +21,7 @@ function App() {
   const onChangeDate: DatePickerProps["onChange"] = (date, dateString) => {
     console.log(date, dateString);
   };
-  const onChangeTime: TimePickerProps['onChange'] = (time, timeString) => {
+  const onChangeTime: TimePickerProps["onChange"] = (time, timeString) => {
     console.log(time, timeString);
   };
 
@@ -36,7 +36,7 @@ function App() {
       </header>
       <div className={styles.form}>
         <div className={styles.products}>
-          <h3>Products</h3>
+          <h4>Products</h4>
           <Cascader
             className={styles.productsList}
             options={products}
@@ -45,13 +45,13 @@ function App() {
         </div>
         <hr className={styles.line} />
         <div className={styles.location}>
-          <h3>Location of growing are</h3>
+          <h4>Location of growing are</h4>
           <Cascader
             className={styles.locationsList}
             options={locations}
             onChange={onChangeOptions}
           />
-          <h3>Recipient Location Description*</h3>
+          <h4>Recipient Location Description*</h4>
           <Cascader
             className={styles.recipientLocations}
             options={options}
@@ -60,6 +60,7 @@ function App() {
         </div>
         <hr className={styles.line} />
         <div className={styles.selections}>
+          <h4>Product Selection</h4>
           <div className={styles.amountType}>
             <InputNumber
               className={styles.amount}
@@ -76,8 +77,14 @@ function App() {
             />
           </div>
           <div className={styles.dateTime}>
-            <DatePicker onChange={onChangeDate} />
-            <TimePicker onChange={onChangeTime} />
+            <div className={styles.date}>
+              <h4>Date of Harversting</h4>
+              <DatePicker className={styles.dateSelect} onChange={onChangeDate} />
+            </div>
+            <div className={styles.time}>
+              <h4>Time of Harversting</h4>
+              <TimePicker className={styles.dateSelect} onChange={onChangeTime} />
+            </div>
           </div>
         </div>
       </div>
