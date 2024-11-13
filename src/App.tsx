@@ -9,8 +9,14 @@ import { Cascader, InputNumber, Select, DatePicker, TimePicker } from "antd";
 import { Options, products, locations, options, measures } from "./Data/data";
 
 function App() {
-  const onChangeOptions: CascaderProps<Options>["onChange"] = (value) => {
-    console.log("Option: ", value);
+  const onChangeProduct = (value: string) => {
+    console.log("Product: ", value);
+  };
+  const onChangeLocation = (value: string) => {
+    console.log("Location: ", value);
+  };
+  const onChangeRecipient = (value: string) => {
+    console.log("Recipient: ", value);
   };
   const onChangeAmount: InputNumberProps["onChange"] = (value) => {
     console.log("Amount: ", value);
@@ -19,10 +25,10 @@ function App() {
     console.log("Measure: ", value);
   };
   const onChangeDate: DatePickerProps["onChange"] = (date, dateString) => {
-    console.log(date, dateString);
+    console.log(dateString);
   };
   const onChangeTime: TimePickerProps["onChange"] = (time, timeString) => {
-    console.log(time, timeString);
+    console.log(timeString);
   };
 
   return (
@@ -37,25 +43,25 @@ function App() {
       <div className={styles.form}>
         <div className={styles.products}>
           <h4>Products</h4>
-          <Cascader
+          <Select
             className={styles.productsList}
             options={products}
-            onChange={onChangeOptions}
+            onChange={onChangeProduct}
           />
         </div>
         <hr className={styles.line} />
         <div className={styles.location}>
           <h4>Location of growing are</h4>
-          <Cascader
+          <Select
             className={styles.locationsList}
             options={locations}
-            onChange={onChangeOptions}
+            onChange={onChangeLocation}
           />
           <h4>Recipient Location Description*</h4>
-          <Cascader
+          <Select
             className={styles.recipientLocations}
             options={options}
-            onChange={onChangeOptions}
+            onChange={onChangeRecipient}
           />
         </div>
         <hr className={styles.line} />
