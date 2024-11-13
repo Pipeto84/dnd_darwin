@@ -1,11 +1,28 @@
 import styles from "./App.module.css";
-import type { CascaderProps } from "antd";
-import { Cascader } from "antd";
-import { Options, products, locations, options } from './Data/data'
+import type {
+  CascaderProps,
+  InputNumberProps,
+  DatePickerProps,
+  TimePickerProps,
+} from "antd";
+import { Cascader, InputNumber, Select, DatePicker, TimePicker } from "antd";
+import { Options, products, locations, options, measures } from "./Data/data";
 
 function App() {
   const onChangeOptions: CascaderProps<Options>["onChange"] = (value) => {
-    console.log(value);
+    console.log("Option: ", value);
+  };
+  const onChangeAmount: InputNumberProps["onChange"] = (value) => {
+    console.log("Amount: ", value);
+  };
+  const onChangeMeasure = (value: string) => {
+    console.log("Measure: ", value);
+  };
+  const onChangeDate: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+  };
+  const onChangeTime: TimePickerProps['onChange'] = (time, timeString) => {
+    console.log(time, timeString);
   };
 
   return (
@@ -42,6 +59,27 @@ function App() {
           />
         </div>
         <hr className={styles.line} />
+        <div className={styles.selections}>
+          <div className={styles.amountType}>
+            <InputNumber
+              className={styles.amount}
+              min={0}
+              defaultValue={0}
+              onChange={onChangeAmount}
+              changeOnWheel
+            />
+            <Select
+              className={styles.measure}
+              defaultValue={measures[1].label}
+              onChange={onChangeMeasure}
+              options={measures}
+            />
+          </div>
+          <div className={styles.dateTime}>
+            <DatePicker onChange={onChangeDate} />
+            <TimePicker onChange={onChangeTime} />
+          </div>
+        </div>
       </div>
     </div>
   );

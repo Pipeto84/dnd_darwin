@@ -47,3 +47,14 @@ export const options: Options[] = [
     label: "Option 3",
   },
 ];
+
+export const measures: Options[] = [
+  {
+    value: "g",
+    label: "Grams (g)",
+  },
+  {
+    value: "Kg",
+    label: "Kilograms (Kg)",
+  },
+];
