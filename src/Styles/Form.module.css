@@ -1,5 +1,5 @@
 .container {
-  width: 55rem;
+  width: 40rem;
   height: 100%;
   margin: 1.25rem;
   background-color: #ffffff;
@@ -23,10 +23,13 @@
 }
 
 .form {
-  width: 40rem;
+  min-width: 60%;
+  max-width: 100%;
+  /* width: 40rem; */
   margin: 30px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .products {
