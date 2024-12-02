@@ -1,6 +1,7 @@
 import styles from "../Styles/Drags.module.css";
 import { Collapse } from "antd";
 import type { CollapseProps } from "antd";
+import { CaretRightOutlined } from "@ant-design/icons";
 
 export const Drags = () => {
   const generalElements: CollapseProps["items"] = [
@@ -70,10 +71,40 @@ export const Drags = () => {
 
   return (
     <div className={styles.containerGeneralElements}>
-      <Collapse defaultActiveKey={["1"]} ghost items={generalElements} expandIconPosition="end"/>
-      <Collapse defaultActiveKey={["2"]} ghost items={formField} expandIconPosition="end"/>
-      <Collapse ghost items={layoutFields} expandIconPosition="end"/>
-      <Collapse ghost items={themes} expandIconPosition="end"/>
+      <Collapse
+        defaultActiveKey={["1"]}
+        ghost
+        items={generalElements}
+        expandIconPosition="end"
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+        )}
+      />
+      <Collapse
+        defaultActiveKey={["2"]}
+        ghost
+        items={formField}
+        expandIconPosition="end"
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+        )}
+      />
+      <Collapse
+        ghost
+        items={layoutFields}
+        expandIconPosition="end"
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+        )}
+      />
+      <Collapse
+        ghost
+        items={themes}
+        expandIconPosition="end"
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+        )}
+      />
     </div>
   );
 };
