@@ -97,6 +97,10 @@ export function Form() {
             </div>
           </div>
         </div>
+        <hr className={styles.line} />
+        <div className={styles.dropSpace}>
+          
+        </div>
       </div>
     </div>
   );

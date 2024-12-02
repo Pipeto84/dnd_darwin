@@ -25,7 +25,6 @@
 .form {
   min-width: 80%;
   max-width: 100%;
-  /* width: 40rem; */
   margin: 30px;
   display: flex;
   flex-direction: column;
@@ -49,7 +48,7 @@
 .line {
   width: 100%;
   align-self: auto;
-  border: .1px solid rgb(214, 209, 209);
+  border: 1px solid rgb(214, 209, 209);
   margin-top: .5rem;
 }
 
@@ -76,6 +75,7 @@
 
 .selections {
   margin-top: 1.50rem;
+  margin-bottom: 1rem;
 }
 
 .amountType {
@@ -103,4 +103,11 @@
 
 .dateSelect {
   margin-top: .6rem;
+}
+
+.dropSpace {
+  width: 100%;
+  height: 150px;
+  margin-top: 1rem;
+  border: 1px solid black;
 }
