@@ -24,7 +24,7 @@
 
 .form {
   width: 40rem;
-  margin: 30px auto;
+  margin: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -43,8 +43,8 @@
 }
 
 .line {
-  width: 125%;
-  align-self: center;
+  width: 100%;
+  align-self: auto;
   border: .1px solid rgb(214, 209, 209);
   margin-top: .5rem;
 }
