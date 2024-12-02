@@ -1,8 +1,29 @@
 
 
-elements {
+.containerGeneralElements {
   width: 20rem;
   margin: 1.25rem;
+  padding: 1rem;
   background-color: #ffffff;
   border-radius: .9375rem;
+}
+
+.titleGeneralElements {
+  font-weight: bold;
+}
+
+.generalElements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.generalElement {
+  text-align: center;
+  padding: .5rem;
+  border: 1px solid rgb(202, 197, 197);
+  border-radius: .25rem;
+  cursor: pointer;
 }
