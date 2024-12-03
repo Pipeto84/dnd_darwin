@@ -3,8 +3,15 @@ import type { InputNumberProps, DatePickerProps, TimePickerProps } from "antd";
 import { InputNumber, Select, DatePicker, TimePicker } from "antd";
 import { products, locations, optionsForm, measures } from "../Data/dataForm";
 import React from "react";
+import { DataCard, Status } from '../interfaces'
+import { Card } from './Card'
 
-export function Form() {
+interface Props {
+  items: DataCard[][]
+  handleUpdateList: (id: string, status:Status) => void
+}
+
+export function Form({items= [[]], handleUpdateList}: Props) {
   const onChangeProduct = (value: string) => {
     console.log("Product: ", value);
   };
@@ -28,6 +35,7 @@ export function Form() {
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
+    handleUpdateList(e.dataTransfer.getData('text'), 'form')
   };
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -112,7 +120,17 @@ export function Form() {
           className={styles.dropSpace}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
-        ></div>
+        >{
+          items.map(list => (
+            list.map(item => (
+              item.status === 'form' &&
+              <Card
+                data={item}
+                key={item.id}
+              />
+            ))
+          ))
+        }</div>
       </div>
     </div>
   );

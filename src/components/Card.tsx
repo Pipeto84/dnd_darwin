@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "../Styles/Card.module.css";
 import { DataCard } from "../interfaces";
 
@@ -6,7 +7,9 @@ interface Props {
 }
 
 export const Card = ({ data }: Props) => {
-  const handleDragStart = () => {};
+  const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
+    e.dataTransfer.setData('text', `${data.id}`)
+  };
   const handleDragEnd = () => {};
 
   return (
