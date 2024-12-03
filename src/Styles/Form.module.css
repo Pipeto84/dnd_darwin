@@ -45,6 +45,14 @@
   align-self: center;
 }
 
+.infoProducts {
+  background-color: #f8f9fd;
+  padding: .8rem .8rem .8rem 1rem;
+  color: rgb(88, 88, 88);
+  border-radius: .5rem;
+  font-size: .9rem;
+}
+
 .line {
   width: 100%;
   align-self: auto;

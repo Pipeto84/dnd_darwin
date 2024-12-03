@@ -27,10 +27,10 @@ export function Form() {
     console.log(timeString);
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
+    e.preventDefault();
   };
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
+    e.preventDefault();
   };
   return (
     <div className={styles.container}>
@@ -49,6 +49,7 @@ export function Form() {
             options={products}
             onChange={onChangeProduct}
           />
+          <span className={styles.infoProducts}>Commodity</span>
         </div>
         <hr className={styles.line} />
         <div className={styles.location}>
@@ -64,6 +65,7 @@ export function Form() {
             options={optionsForm}
             onChange={onChangeRecipient}
           />
+          <span className={styles.infoProducts}>Harvest Location Address<br/><br/>Recipient Organization</span>
         </div>
         <hr className={styles.line} />
         <div className={styles.selections}>
