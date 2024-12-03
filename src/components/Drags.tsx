@@ -90,7 +90,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
         items={containerGeneralElements}
         expandIconPosition="end"
         expandIcon={({ isActive }) => (
-          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+          <CaretRightOutlined rotate={isActive ? 270 : 90} />
         )}
       />
       <Collapse
@@ -99,7 +99,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
         items={containerformField}
         expandIconPosition="end"
         expandIcon={({ isActive }) => (
-          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+          <CaretRightOutlined rotate={isActive ? 270 : 90} />
         )}
       />
       <Collapse
@@ -107,7 +107,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
         items={containerlayoutFields}
         expandIconPosition="end"
         expandIcon={({ isActive }) => (
-          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+          <CaretRightOutlined rotate={isActive ? 270 : 90} />
         )}
       />
       <Collapse
@@ -115,7 +115,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
         items={containerthemes}
         expandIconPosition="end"
         expandIcon={({ isActive }) => (
-          <CaretRightOutlined rotate={isActive ? 90 : 0} />
+          <CaretRightOutlined rotate={isActive ? 270 : 90} />
         )}
       />
     </div>
