@@ -7,11 +7,11 @@ import { DataCard, Status } from '../interfaces'
 import { Card } from './Card'
 
 interface Props {
-  items: DataCard[][]
+  list: DataCard[][]
   handleUpdateList: (id: string, status:Status) => void
 }
 
-export function Form({items= [[]], handleUpdateList}: Props) {
+export function Form({list= [[]], handleUpdateList}: Props) {
   const onChangeProduct = (value: string) => {
     console.log("Product: ", value);
   };
@@ -121,8 +121,8 @@ export function Form({items= [[]], handleUpdateList}: Props) {
           onDrop={handleDrop}
           onDragOver={handleDragOver}
         >{
-          items.map(list => (
-            list.map(item => (
+          list.map(items => (
+            items.map(item => (
               item.status === 'form' &&
               <Card
                 data={item}

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className={styles.containerMain}>
       <Drags cards={listItems} />
-      <Form items={listItems} handleUpdateList={handleUpdateList}/>
+      <Form list={listItems} handleUpdateList={handleUpdateList}/>
     </div>
   );
 }
