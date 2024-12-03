@@ -23,6 +23,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
             generalElements.map(item => (
               <Card
                 data={item}
+                key={item.id}
               />
             ))
           }
@@ -40,6 +41,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
             formFields.map(item => (
               <Card
                 data={item}
+                key={item.id}
               />
             ))
           }
@@ -57,6 +59,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
             layoutsElements.map(item => (
               <Card
                 data={item}
+                key={item.id}
               />
             ))
           }
@@ -74,6 +77,7 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
             themes.map(item => (
               <Card
                 data={item}
+                key={item.id}
               />
             ))
           }
