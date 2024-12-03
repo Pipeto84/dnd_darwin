@@ -2,31 +2,23 @@ import styles from "../Styles/Drags.module.css";
 import { Collapse } from "antd";
 import type { CollapseProps } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
-import { DataCard } from '../interfaces'
-import { Card } from './Card'
+import { DataCard } from "../interfaces";
+import { Card } from "./Card";
 
 interface Props {
-  generalElements: DataCard[]
-  formFields: DataCard[]
-  layoutsElements: DataCard[]
-  themes: DataCard[]
+  cards: DataCard[][];
 }
 
-export const Drags = ({generalElements, formFields, layoutsElements, themes}: Props) => {
+export const Drags = ({ cards }: Props) => {
   const containerGeneralElements: CollapseProps["items"] = [
     {
       key: "1",
       label: "Add General Element",
       children: (
         <div className={styles.generalElements}>
-          {
-            generalElements.map(item => (
-              <Card
-                data={item}
-                key={item.id}
-              />
-            ))
-          }
+          {cards[0].map((item) => (
+            <Card data={item} key={item.id} />
+          ))}
         </div>
       ),
     },
@@ -37,14 +29,9 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
       label: "Add Form Field",
       children: (
         <div className={styles.generalElements}>
-          {
-            formFields.map(item => (
-              <Card
-                data={item}
-                key={item.id}
-              />
-            ))
-          }
+          {cards[1].map((item) => (
+            <Card data={item} key={item.id} />
+          ))}
         </div>
       ),
     },
@@ -55,14 +42,9 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
       label: "Layout Elements",
       children: (
         <div className={styles.generalElements}>
-          {
-            layoutsElements.map(item => (
-              <Card
-                data={item}
-                key={item.id}
-              />
-            ))
-          }
+          {cards[2].map((item) => (
+            <Card data={item} key={item.id} />
+          ))}
         </div>
       ),
     },
@@ -73,14 +55,9 @@ export const Drags = ({generalElements, formFields, layoutsElements, themes}: Pr
       label: "Add Form Field",
       children: (
         <div className={styles.generalElements}>
-          {
-            themes.map(item => (
-              <Card
-                data={item}
-                key={item.id}
-              />
-            ))
-          }
+          {cards[3].map((item) => (
+            <Card data={item} key={item.id} />
+          ))}
         </div>
       ),
     },

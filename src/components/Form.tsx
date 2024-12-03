@@ -65,7 +65,12 @@ export function Form() {
             options={optionsForm}
             onChange={onChangeRecipient}
           />
-          <span className={styles.infoProducts}>Harvest Location Address<br/><br/>Recipient Organization</span>
+          <span className={styles.infoProducts}>
+            Harvest Location Address
+            <br />
+            <br />
+            Recipient Organization
+          </span>
         </div>
         <hr className={styles.line} />
         <div className={styles.selections}>

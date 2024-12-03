@@ -1,11 +1,11 @@
 import styles from "../Styles/Card.module.css";
-import { DataCard } from '../interfaces'
+import { DataCard } from "../interfaces";
 
 interface Props {
   data: DataCard;
 }
 
-export const Card = ({data}: Props) => {
+export const Card = ({ data }: Props) => {
   const handleDragStart = () => {};
   const handleDragEnd = () => {};
 
