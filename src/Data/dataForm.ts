@@ -1,9 +1,6 @@
-export interface Options {
-  value: string;
-  label: string;
-}
+import { OptionsForm } from "../interfaces";
 
-export const products: Options[] = [
+export const products: OptionsForm[] = [
   {
     value: "Product 1",
     label: "Product 1",
@@ -18,7 +15,7 @@ export const products: Options[] = [
   },
 ];
 
-export const locations: Options[] = [
+export const locations: OptionsForm[] = [
   {
     value: "Campo norte zona A",
     label: "Campo norte zona A",
@@ -33,7 +30,7 @@ export const locations: Options[] = [
   },
 ];
 
-export const options: Options[] = [
+export const optionsForm: OptionsForm[] = [
   {
     value: "Option 1",
     label: "Option 1",
@@ -48,7 +45,7 @@ export const options: Options[] = [
   },
 ];
 
-export const measures: Options[] = [
+export const measures: OptionsForm[] = [
   {
     value: "g",
     label: "Grams (g)",

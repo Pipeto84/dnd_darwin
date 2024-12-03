@@ -1,11 +1,8 @@
 import styles from "../Styles/Form.module.css";
-import type {
-  InputNumberProps,
-  DatePickerProps,
-  TimePickerProps,
-} from "antd";
+import type { InputNumberProps, DatePickerProps, TimePickerProps } from "antd";
 import { InputNumber, Select, DatePicker, TimePicker } from "antd";
-import { products, locations, options, measures } from "../Data/data";
+import { products, locations, optionsForm, measures } from "../Data/dataForm";
+import React from "react";
 
 export function Form() {
   const onChangeProduct = (value: string) => {
@@ -28,6 +25,12 @@ export function Form() {
   };
   const onChangeTime: TimePickerProps["onChange"] = (time, timeString) => {
     console.log(timeString);
+  };
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault()
+  };
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault()
   };
   return (
     <div className={styles.container}>
@@ -58,7 +61,7 @@ export function Form() {
           <h4>Recipient Location Description*</h4>
           <Select
             className={styles.recipientLocations}
-            options={options}
+            options={optionsForm}
             onChange={onChangeRecipient}
           />
         </div>
@@ -98,9 +101,11 @@ export function Form() {
           </div>
         </div>
         <hr className={styles.line} />
-        <div className={styles.dropSpace}>
-          
-        </div>
+        <div
+          className={styles.dropSpace}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+        ></div>
       </div>
     </div>
   );

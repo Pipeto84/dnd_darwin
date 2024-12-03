@@ -15,17 +15,9 @@
 .generalElements {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 1rem;
-}
-
-.generalElement {
-  text-align: center;
-  padding: .5rem;
-  border: 1px solid rgb(202, 197, 197);
-  border-radius: .25rem;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
