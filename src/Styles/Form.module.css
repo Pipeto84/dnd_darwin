@@ -3,7 +3,7 @@
   height: 100%;
   margin: 1.25rem;
   background-color: #ffffff;
-  border-radius: .9375rem;
+  border-radius: 0.9375rem;
   display: flex;
   flex-direction: column;
 }
@@ -15,11 +15,11 @@
 }
 
 .titleHeader {
-  margin: 25px 50px 0 35px ;
+  margin: 25px 50px 0 35px;
 }
 
 .infoHeader {
-  margin: 5px 50px 25px 35px ;
+  margin: 5px 50px 25px 35px;
 }
 
 .form {
@@ -35,7 +35,7 @@
 .products {
   display: flex;
   flex-direction: column;
-  gap: .625rem;
+  gap: 0.625rem;
   margin-bottom: 1.25rem;
 }
 
@@ -43,22 +43,22 @@
   width: 100%;
   height: 2.5rem;
   align-self: center;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 
 .infoProducts {
   background-color: #f8f9fd;
-  padding: .8rem .8rem .8rem 1rem;
+  padding: 0.8rem 0.8rem 0.8rem 1rem;
   color: rgb(88, 88, 88);
-  border-radius: .5rem;
-  font-size: .9rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .line {
   width: 100%;
   align-self: auto;
   border: 1px solid rgb(214, 209, 209);
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .location {
@@ -83,12 +83,12 @@
 }
 
 .selections {
-  margin-top: 1.50rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .amountType {
-  margin-top: .6rem;
+  margin-top: 0.6rem;
 }
 
 .amount {
@@ -103,7 +103,6 @@
 .dateTime {
   margin-top: 2rem;
   display: flex;
-
 }
 
 .date {
@@ -111,12 +110,12 @@
 }
 
 .dateSelect {
-  margin-top: .6rem;
+  margin-top: 0.6rem;
 }
 
 .dropSpace {
   width: 100%;
-  height: 150px;
+  height: 200px;
   margin-top: 1rem;
   border: 1px solid black;
 }
