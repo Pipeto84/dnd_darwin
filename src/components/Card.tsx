@@ -8,7 +8,8 @@ interface Props {
 
 export const Card = ({ data }: Props) => {
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-    e.dataTransfer.setData('text', `${data.id}`)
+    e.dataTransfer.setData('id', `${data.id}`)
+    e.dataTransfer.setData('group', `${data.group}`)
   };
   const handleDragEnd = () => {};
 

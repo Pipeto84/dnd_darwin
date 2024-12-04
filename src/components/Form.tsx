@@ -8,7 +8,7 @@ import { Card } from './Card'
 
 interface Props {
   list: DataCard[][]
-  handleUpdateList: (id: string, status:Status) => void
+  handleUpdateList: (id: string, group: string) => void
 }
 
 export function Form({list= [[]], handleUpdateList}: Props) {
@@ -35,7 +35,7 @@ export function Form({list= [[]], handleUpdateList}: Props) {
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    handleUpdateList(e.dataTransfer.getData('text'), 'form')
+    handleUpdateList(e.dataTransfer.getData('id'), e.dataTransfer.getData('group'))
   };
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
