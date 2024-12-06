@@ -4,22 +4,29 @@ import type { CollapseProps } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 import { DataCard } from "../interfaces";
 import { Card } from "./Card";
+import { useDragAndDrop } from "../hooks/useDragAndDrop";
+import { cards } from "../Data/dataCards";
 
 interface Props {
   cards: DataCard[][];
 }
 
 export const Drags = ({ cards }: Props) => {
+  const { handleDragging } = useDragAndDrop(cards);
+
   const containerGeneralElements: CollapseProps["items"] = [
     {
       key: "1",
       label: "Add General Element",
       children: (
-        <div className={styles.generalElements}>
-          {cards[0].map((item) => (
-            <Card data={item} key={item.id} />
-          ))}
-        </div>
+        <>
+          <p>Info general elements</p>
+          <div className={styles.generalElements}>
+            {cards[0].map((item) => (
+              <Card data={item} key={item.id} handleDragging={handleDragging} />
+            ))}
+          </div>
+        </>
       ),
     },
   ];
@@ -28,11 +35,14 @@ export const Drags = ({ cards }: Props) => {
       key: "2",
       label: "Add Form Field",
       children: (
-        <div className={styles.generalElements}>
-          {cards[1].map((item) => (
-            <Card data={item} key={item.id} />
-          ))}
-        </div>
+        <>
+          <p>Info form field</p>
+          <div className={styles.generalElements}>
+            {cards[1].map((item) => (
+              <Card data={item} key={item.id} handleDragging={handleDragging} />
+            ))}
+          </div>
+        </>
       ),
     },
   ];
@@ -41,24 +51,30 @@ export const Drags = ({ cards }: Props) => {
       key: "3",
       label: "Layout Elements",
       children: (
-        <div className={styles.generalElements}>
-          {cards[2].map((item) => (
-            <Card data={item} key={item.id} />
-          ))}
-        </div>
+        <>
+          <p>Info layout elements</p>
+          <div className={styles.generalElements}>
+            {cards[2].map((item) => (
+              <Card data={item} key={item.id} handleDragging={handleDragging} />
+            ))}
+          </div>
+        </>
       ),
     },
   ];
   const containerthemes: CollapseProps["items"] = [
     {
       key: "4",
-      label: "Add Form Field",
+      label: "Themes",
       children: (
-        <div className={styles.generalElements}>
-          {cards[3].map((item) => (
-            <Card data={item} key={item.id} />
-          ))}
-        </div>
+        <>
+          <p>Info themes</p>
+          <div className={styles.generalElements}>
+            {cards[3].map((item) => (
+              <Card data={item} key={item.id} handleDragging={handleDragging} />
+            ))}
+          </div>
+        </>
       ),
     },
   ];
@@ -92,6 +108,7 @@ export const Drags = ({ cards }: Props) => {
         )}
       />
       <Collapse
+        defaultActiveKey={["4"]}
         ghost
         items={containerthemes}
         expandIconPosition="end"

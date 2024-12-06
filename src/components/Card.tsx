@@ -4,14 +4,18 @@ import { DataCard } from "../interfaces";
 
 interface Props {
   data: DataCard;
+  handleDragging: (dragging: boolean) => void;
 }
 
-export const Card = ({ data }: Props) => {
+export const Card = ({ data, handleDragging }: Props) => {
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     e.dataTransfer.setData('id', `${data.id}`)
     e.dataTransfer.setData('group', `${data.group}`)
+    handleDragging(true)
   };
-  const handleDragEnd = () => {};
+  const handleDragEnd = () => {
+    handleDragging(false);
+  }
 
   return (
     <div

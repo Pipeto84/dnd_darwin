@@ -7,7 +7,9 @@ export const useDragAndDrop = (initialState: DataCard[][]) => {
 
   const [isDragging, setIsDragging] = useState(false);
 
-  const handleDragging = (dragging: boolean) => setIsDragging(dragging);
+  const handleDragging = (dragging: boolean) => {
+    setIsDragging(dragging);
+  }
 
   const handleUpdateList = (id: string) => {
     listItems.map((collapse) => {

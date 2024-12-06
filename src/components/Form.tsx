@@ -9,9 +9,11 @@ import { Card } from './Card'
 interface Props {
   list: DataCard[][]
   handleUpdateList: (id: string) => void
+  isDragging: boolean
+  handleDragging: (dragging: boolean) => void
 }
 
-export function Form({list= [[]], handleUpdateList}: Props) {
+export function Form({list= [[]], handleUpdateList, isDragging, handleDragging}: Props) {
   const onChangeProduct = (value: string) => {
     console.log("Product: ", value);
   };
@@ -36,6 +38,7 @@ export function Form({list= [[]], handleUpdateList}: Props) {
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     handleUpdateList(e.dataTransfer.getData('id'))
+    handleDragging(false)
   };
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -117,7 +120,7 @@ export function Form({list= [[]], handleUpdateList}: Props) {
         </div>
         <hr className={styles.line} />
         <div
-          className={styles.dropSpace}
+          className={`${isDragging ? styles.dragging : styles.dropSpace}`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
         >{
@@ -127,6 +130,7 @@ export function Form({list= [[]], handleUpdateList}: Props) {
               <Card
                 data={item}
                 key={item.id}
+                handleDragging={handleDragging}
               />
             ))
           ))
