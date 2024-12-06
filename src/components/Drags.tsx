@@ -17,7 +17,7 @@ export const Drags = ({ cards }: Props) => {
   const containerGeneralElements: CollapseProps["items"] = [
     {
       key: "1",
-      label: "Add General Element",
+      label: <h3>Add General Element</h3>,
       children: (
         <>
           <p>Info general elements</p>
@@ -33,7 +33,7 @@ export const Drags = ({ cards }: Props) => {
   const containerformField: CollapseProps["items"] = [
     {
       key: "2",
-      label: "Add Form Field",
+      label: <h3>Add Form Field</h3>,
       children: (
         <>
           <p>Info form field</p>
@@ -49,7 +49,7 @@ export const Drags = ({ cards }: Props) => {
   const containerlayoutFields: CollapseProps["items"] = [
     {
       key: "3",
-      label: "Layout Elements",
+      label: <h3>Layout Elements</h3>,
       children: (
         <>
           <p>Info layout elements</p>
@@ -65,7 +65,7 @@ export const Drags = ({ cards }: Props) => {
   const containerthemes: CollapseProps["items"] = [
     {
       key: "4",
-      label: "Themes",
+      label: <h3>Themes</h3>,
       children: (
         <>
           <p>Info themes</p>
@@ -78,6 +78,9 @@ export const Drags = ({ cards }: Props) => {
       ),
     },
   ];
+  const onChangeA = (value: string) => {
+    console.log("A: ", value);
+  };
 
   return (
     <div className={styles.containerGeneralElements}>
@@ -108,7 +111,6 @@ export const Drags = ({ cards }: Props) => {
         )}
       />
       <Collapse
-        defaultActiveKey={["4"]}
         ghost
         items={containerthemes}
         expandIconPosition="end"
