@@ -3,17 +3,22 @@ import type { InputNumberProps, DatePickerProps, TimePickerProps } from "antd";
 import { InputNumber, Select, DatePicker, TimePicker } from "antd";
 import { products, locations, optionsForm, measures } from "../Data/dataForm";
 import React from "react";
-import { DataCard } from '../interfaces'
-import { Card } from './Card'
+import { DataCard } from "../interfaces";
+import { Card } from "./Card";
 
 interface Props {
-  list: DataCard[][]
-  handleUpdateList: (id: string) => void
-  isDragging: boolean
-  handleDragging: (dragging: boolean) => void
+  list: DataCard[][];
+  handleUpdateList: (id: string) => void;
+  isDragging: boolean;
+  handleDragging: (dragging: boolean) => void;
 }
 
-export function Form({list= [[]], handleUpdateList, isDragging, handleDragging}: Props) {
+export function Form({
+  list = [[]],
+  handleUpdateList,
+  isDragging,
+  handleDragging,
+}: Props) {
   const onChangeProduct = (value: string) => {
     console.log("Product: ", value);
   };
@@ -37,8 +42,8 @@ export function Form({list= [[]], handleUpdateList, isDragging, handleDragging}:
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    handleUpdateList(e.dataTransfer.getData('id'))
-    handleDragging(false)
+    handleUpdateList(e.dataTransfer.getData("id"));
+    handleDragging(false);
   };
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -48,8 +53,8 @@ export function Form({list= [[]], handleUpdateList, isDragging, handleDragging}:
       <header className={styles.header}>
         <h1 className={styles.titleHeader}>Harvesting Process</h1>
         <p className={styles.infoHeader}>
-          En este formulario usted debe configurar los requerimientos básicos
-          por el FDA para ser declarados por producto.
+          In this form you must configure the basic requirements for the FDA to
+          be declared by product.
         </p>
       </header>
       <div className={styles.form}>
@@ -123,18 +128,20 @@ export function Form({list= [[]], handleUpdateList, isDragging, handleDragging}:
           className={`${isDragging ? styles.dragging : styles.dropSpace}`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
-        >{
-          list.map(items => (
-            items.map(item => (
-              item.status === 'form' &&
-              <Card
-                data={item}
-                key={item.id}
-                handleDragging={handleDragging}
-              />
-            ))
-          ))
-        }</div>
+        >
+          {list.map((items) =>
+            items.map(
+              (item) =>
+                item.status === "form" && (
+                  <Card
+                    data={item}
+                    key={item.id}
+                    handleDragging={handleDragging}
+                  />
+                )
+            )
+          )}
+        </div>
       </div>
     </div>
   );
